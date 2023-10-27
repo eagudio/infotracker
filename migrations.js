@@ -1,20 +1,18 @@
-'use strict';
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('users', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       email: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
     }, {
       timestamps: true,
@@ -24,44 +22,44 @@ module.exports = {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       userId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'users',
-          key: 'id'
+          key: 'id',
         },
         onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
       },
       utm_campaign: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: true,
       },
       utm_medium: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: true,
       },
       utm_source: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: true,
       },
       landed_at: {
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: false,
       },
       referrer_url: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: true,
       },
     }, {
       timestamps: true,
     });
   },
 
-  down: async (queryInterface, Sequelize) => {
+  down: async (queryInterface) => {
     await queryInterface.dropTable('utm_info');
     await queryInterface.dropTable('users');
-  }
+  },
 };
