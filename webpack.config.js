@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = (env) => ({
-  entry: './index.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'infotracker.js',
