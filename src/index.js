@@ -1,7 +1,7 @@
-import setUtmCookie from './utmcookie';
+import trackUtmParams from './utmcookie';
 
 const InfoTracker = {
-  setUtmCookie,
+  trackUtmParams,
 };
 
 export default InfoTracker;

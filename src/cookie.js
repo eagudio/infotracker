@@ -16,7 +16,7 @@ const setCookie = (cName, cValue, expDays) => {
   date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
   const expires = `Expires=${date.toUTCString()}`;
 
-  document.cookie = `${cName}=${JSON.stringify(cValue)}; ${expires}; Path=/; Domain=.start2impact.it; `;
+  document.cookie = `${cName}=${JSON.stringify(cValue)}; ${expires}; Path=/; Domain=localhost; `;
 };
 
 export { getCookie, setCookie };
